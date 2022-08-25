@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+/* CSS PROPIO */
+.flexDefault {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navFlex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.containerMargin {
+  margin: 0px 5px;
+}
+
+@media (min-width: 576px) and (max-width: 1600px) {
+  .containerMargin{
+    margin: 0px 5px;
+    max-width: 100%;
+  }
+}
