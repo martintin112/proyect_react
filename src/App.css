@@ -59,3 +59,11 @@
     max-width: 100%;
   }
 }
+
+.containerButtoms {
+  justify-content: space-between;
+}
+
+.botones {
+  width: 40px;
+}
