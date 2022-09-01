@@ -8,15 +8,14 @@ function App({contador, setContador}) {
   const color = {color: "Red"}
   const fondo = {backgroundColor: "Black"}
   const greeting = "Hola! Esta es mi app en React"
-  const start = 0
-  let stock = 15
+  // const start = 0
+  // let stock = 15
 
   return (
   <>
     <div className="App">
       <NavBar />
       <ItemListContainer color={color} fondo={fondo} saludo={greeting}/>
-      <ItemCount start={start} stock= {stock} />
     </div>
     
   </>
