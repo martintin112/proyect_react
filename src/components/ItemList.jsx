@@ -6,7 +6,7 @@ export default function ItemList ({productos}) {
     return (
         <div className="flex margin">
             {productos.map((producto) => {
-                return <Item producto={producto} />
+                return <Item key={producto.id} producto={producto} />
             })}
         </div>
     )

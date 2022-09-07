@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 
@@ -16,6 +17,7 @@ function App({contador, setContador}) {
     <div className="App">
       <NavBar />
       <ItemListContainer color={color} fondo={fondo} saludo={greeting}/>
+      <ItemDetailContainer />
     </div>
     
   </>
