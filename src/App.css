@@ -70,3 +70,11 @@
 .colorLink{
   color: gainsboro;
 }
+.flexBtnCount{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.marginBtn{
+  margin-top: 10px;
+}

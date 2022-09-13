@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from "react"
-import { Button, Card } from "react-bootstrap"
+import React from "react"
+import { Button} from "react-bootstrap"
 
 
-export default function ItemCount({start, stock}) {
-    const [contador, setContador] = useState(start)
-    const [stockRestante, setStock] = useState(stock)
+export default function ItemCount({start, stock, contador, setContador, onAdd}) {
 
     return (
         <>
         
             <div className="flexDefault containerButtoms">
-                <Button className="botones" variant="danger" onClick={()=> (contador==0) ? setContador(start) : setContador(contador - 1)}>-</Button>
+                <Button className="botones" variant="danger" onClick={()=> (contador===0) ? setContador(start) : setContador(contador - 1)}>-</Button>
                 <div>
                 <p>Total: {contador}</p>
-                <p><b>Stock: {stockRestante}</b></p>
+                <p><b>Stock: {stock}</b></p>
                 </div>
-                <Button className="botones" variant="info" onClick={()=>(contador==stockRestante) ? setContador(stockRestante) : setContador(contador + 1)}>+</Button>
+                <Button className="botones" variant="info" onClick={()=>(contador===stock) ? setContador(stock) : setContador(contador + 1)}>+</Button>
             </div>
-            <Button variant="secondary" onClick={()=> {setContador(start); (contador<=stockRestante) ? setStock(stockRestante-contador) : alert("No se puede superar el stock") }} >Agregar</Button>
+            <div>
+            <Button variant="success" onClick={onAdd} >Agregar</Button>
+            </div>
+            
         
         </>
     )
