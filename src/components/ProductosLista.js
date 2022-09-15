@@ -17,7 +17,10 @@ const productosStock = [
         "imagen": imgS7,
         "imagen2":img2S7,
         "altImg": "Tab S7",
-        "titleImg": "Samsung Tab S7"
+        "titleImg": "Samsung Tab S7",
+        "camara": "Cámara principal de 12 MP",
+        "colores": "Blanco estrella, medianoche, azul y rosa",
+        "capacidad": "128GB"
     },
     {
         "id": "2",
@@ -28,7 +31,10 @@ const productosStock = [
         "imagen": imgS22,
         "imagen2":img2S22,
         "altImg": "Telefono Samsung S22",
-        "titleImg": "Samsung S22"
+        "titleImg": "Samsung S22",
+        "camara": "Cámara principal de 12 MP",
+        "colores": "Blanco estrella, medianoche, azul y rosa",
+        "capacidad": "128GB"
     },
     {
         "id": "3",
@@ -39,7 +45,10 @@ const productosStock = [
         "imagen": imgHP,
         "imagen2":img2HP,
         "altImg": "Notebook HP Pavilion",
-        "titleImg": "Notebook HP"
+        "titleImg": "Notebook HP",
+        "camara": "Cámara principal de 12 MP",
+        "colores": "Blanco estrella, medianoche, azul y rosa",
+        "capacidad": "128GB"
     },
     {
         "id": "4",
@@ -53,7 +62,7 @@ const productosStock = [
         "titleImg": "Iphone 13",
         "camara": "Cámara principal de 12 MP",
         "colores": "Blanco estrella, medianoche, azul y rosa",
-        "capacidad": "128GB",
+        "capacidad": "128GB"
 
     }
 ]

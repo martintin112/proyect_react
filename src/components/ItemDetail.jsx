@@ -1,36 +1,46 @@
 import React, { useState } from "react"
 import { ListGroup, Card, Button} from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
+import { useCart } from "../context/CartContext"
 import ItemCount from "./ItemCount"
 
 export default function ItemDetail ({producto}) {
     const estilo = {borderBottom: "solid 1px rgba(0,0,0,0.175)", marginBottom: "5px"}
-    const start = 0
-    const[compra, setCompra]=useState(false)
+    const start = 1
     const [contador, setContador] = useState(start)
-    const [stockRestante, setStock] = useState(producto.stock)
+    const [compra, setCompra]=useState(false)
+    const { nombre, precio, stock, imagen, imagen2, id, camara, capacidad, colores} = producto
+    const [stockRestante, setStock] = useState(stock)
     const navegar = useNavigate()
+    const{addItem} = useCart()
 
     const onAdd = () => {
         (contador<=stockRestante) ? setStock(stockRestante-contador) : alert("No se puede superar el stock")
-        console.log(`compraste ${contador} items del producto ${producto.nombre}`)
+        let purchase = {
+            id,
+            nombre,
+            precio,
+            stock,
+            imagen,
+            quantity:contador
+        }
         setCompra(true)
-        
+        addItem(purchase)
     }
 
     return(
         <div>
             <Card style={{ width: '18rem' }}>
-            <Card.Img style={estilo} variant="top" src={producto.imagen2} />
-            <Card.Title>Precio: {producto.precio}</Card.Title>
+            <Card.Img style={estilo} variant="top" src={imagen2} />
+            <Card.Title>Precio: {precio}</Card.Title>
             <Card.Header>Caracteristicas:</Card.Header>
             <ListGroup variant="flush">
-                <ListGroup.Item><b>Camara:</b> {producto.camara}</ListGroup.Item>
-                <ListGroup.Item><b>Capacidad:</b> {producto.capacidad}</ListGroup.Item>
-                <ListGroup.Item><b>Colores:</b> {producto.colores}</ListGroup.Item>
+                <ListGroup.Item><b>Camara:</b> {camara}</ListGroup.Item>
+                <ListGroup.Item><b>Capacidad:</b> {capacidad}</ListGroup.Item>
+                <ListGroup.Item><b>Colores:</b> {colores}</ListGroup.Item>
             </ListGroup>
             <Card.Body>
-                {!compra ? <ItemCount start={start} onAdd={onAdd} stock= {producto.stock} contador={contador} setContador={setContador} stockRest={stockRestante} setStock={setStock}/>
+                {!compra ? <ItemCount start={start} onAdd={onAdd} stock= {stock} contador={contador} setContador={setContador} stockRest={stockRestante} setStock={setStock}/>
                 : <div className="flexBtnCount"> 
                     <Button onClick={()=>navegar('/')} variant="success"> Seguir Comprando</Button>
                     <Button onClick={()=>navegar('/cart')} className="marginBtn" variant="secondary"> Ir al Carrito</Button>
