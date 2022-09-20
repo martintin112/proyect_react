@@ -16,7 +16,7 @@ export default function NavBar() {
                         <NavLink className="nav-link colorLink" to='/categoria/notebooks'>Notebooks</NavLink>
                     </Nav>
                     <Nav>
-                    <a className="nav-link colorLink" href="#carrito"><CartWidget/></a>
+                    <NavLink to='/cart' className="nav-link colorLink" href="#carrito"><CartWidget/></NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

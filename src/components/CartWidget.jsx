@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import { useCart } from "../context/CartContext"
 
 export default function CartWidget() {
+    const{cartQuantity} = useCart()
     return (
-        <div>🛒{0}</div> 
+        <div>
+            <span>🛒 {cartQuantity() || ''}</span>
+        </div> 
     )
 }
