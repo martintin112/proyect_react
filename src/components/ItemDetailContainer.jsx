@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import { data } from "./ProductosLista";
+import {getFirestore, collection, doc, getDoc} from "firebase/firestore";
 
 export default function ItemDetailContainer () {
 
@@ -9,20 +9,20 @@ export default function ItemDetailContainer () {
     const[cargando,setCargando] = useState(true)
     const{id}=useParams()
     
-    useEffect(() => {
-        const getItem = new Promise((res, rej) => {
-            setTimeout(() => {
-                res(data);
-            }, 2000);
-        });
-        getItem.then((resultado)=>{
-            setProducto(resultado.find((item)=> item.id === id))
-        });
-        getItem.catch((error) => {
-            alert("No se pudo realizar la accion")
+    useEffect(()=>{
+        const db = getFirestore()
+        const colleccionProds = collection(db, "products")
+        const refDoc = doc(colleccionProds, id)
+        getDoc(refDoc)
+        .then((res)=>{
+            setProducto({
+                id:res.id,
+                ...res.data()
+            })
         })
+        .catch((err)=>console.log(err))
         .finally(()=>setCargando(false))
-    },[id]);
+    },[id])
 
     return(
         <div>

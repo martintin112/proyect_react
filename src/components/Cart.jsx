@@ -5,9 +5,8 @@ import { Button } from "react-bootstrap"
 import CartItem from "./CartItem"
 
 export default function Cart () {
-    const {cart, removeItem, cartTotal, clear} = useCart()
+    const {cart, cartTotal, clear} = useCart()
     const navegar = useNavigate()
-    console.log('carrito', cart)
     return (
         <div>
             {
