@@ -21,6 +21,7 @@ export default function Cart () {
                     <span>Total: ${cartTotal()}</span>
                     <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', padding:'10px'}}>
                         <Button variant="secondary" onClick={clear}>Vaciar Carrito</Button>
+                        <Button variant="success" onClick={()=>navegar('/checkout')}>Terminar Compra</Button>
                     </div>
                     
                 </div>
