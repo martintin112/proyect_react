@@ -49,6 +49,10 @@
   width: 100%;
 }
 
+.fondoNav  {
+  background-color: gainsboro !important;  
+}
+
 .containerMargin {
   margin: 0px 5px;
 }
@@ -68,7 +72,7 @@
   width: 40px;
 }
 .colorLink{
-  color: gainsboro;
+  color: black;
 }
 .flexBtnCount{
   display: flex;
@@ -78,3 +82,71 @@
 .marginBtn{
   margin-top: 10px;
 }
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  height: 99px;
+  text-align: center;
+  font-size: 35px;
+  font-family: "Gugi", cursive;
+  font-weight: bold;
+}
+
+.separacionCards {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.buttonCards {
+  background-color: darkorange;
+}
+
+.seccionDetalles {
+  background: rgba(0,0,0,.8);
+  display: grid;
+  justify-content: center;
+}
+
+.colCarrito {
+  margin-top: 80px;
+}
+.marginTituloCart{
+  margin-bottom: 0px;
+}
+
+.botonCheckout{
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .colCarrito{
+    margin-top: 0px;
+  }
+  .botonEliminar{
+    margin-bottom: 20px;
+  }
+}
+
+/* SECCION FOOTER */
+.footerContactos {
+  color: black;
+  font-size: 20px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #cecece;
+  font-family: 'Open Sans', sans-serif; }
+
+.division {
+  border-top: 1px solid #cecece; }
+
+.imgLogo {
+  height: 60px; }
+
+.logoFace {
+  height: 60px; }
+
+.logoInsta {
+  height: 60px; }
+
+

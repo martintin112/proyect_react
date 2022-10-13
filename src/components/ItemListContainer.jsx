@@ -30,6 +30,13 @@ useEffect(() => {
     if(cargando) {
         return <p className="texto">CARGANDO...🔄</p>;
     } else {
-        return <ItemList productos={productos}/>
+        return( 
+        <>  
+            <div className="titulo">
+                <p>Productos</p>
+            </div>
+            <ItemList productos={productos}/>
+        </>
+        )
     };
 }

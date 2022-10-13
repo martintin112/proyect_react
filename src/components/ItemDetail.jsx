@@ -29,10 +29,10 @@ export default function ItemDetail ({producto}) {
     }
 
     return(
-        <div>
-            <Card style={{ width: '18rem' }}>
+        <div className="seccionDetalles container-fluid">
+            <Card style={{ width: '18rem', marginTop:'20px', marginBottom:'20px' }}>
             <Card.Img style={estilo} variant="top" src={imagen2} />
-            <Card.Title>Precio: {precio}</Card.Title>
+            <Card.Title>Precio: ${precio}</Card.Title>
             <Card.Header>Caracteristicas:</Card.Header>
             <ListGroup variant="flush">
                 <ListGroup.Item><b>Camara:</b> {camara}</ListGroup.Item>
@@ -43,7 +43,7 @@ export default function ItemDetail ({producto}) {
                 {!compra ? <ItemCount start={start} onAdd={onAdd} stock= {stock} contador={contador} setContador={setContador} stockRest={stockRestante} setStock={setStock}/>
                 : <div className="flexBtnCount"> 
                     <Button onClick={()=>navegar('/')} variant="success"> Seguir Comprando</Button>
-                    <Button onClick={()=>navegar('/cart')} className="marginBtn" variant="secondary"> Ir al Carrito</Button>
+                    <Button onClick={()=>navegar('/cart')} className="marginBtn buttonCards" variant="secondary"> Ir al Carrito</Button>
                 </div> }
             </Card.Body>
             </Card>

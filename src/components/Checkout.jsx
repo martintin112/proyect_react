@@ -48,13 +48,12 @@ export default function Checkout () {
         <div>
             {!orderId
                 ? <div>
-                    <h2>Checkout</h2>
-                    <p>Complete sus datos</p>
+                    <h2 className="titulo">Checkout</h2>
                     <div>
                         <Form style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}} onSubmit={finalizarCompra}>
                             <Form.Group className="mb-3">
                                 <Form.Label>Nombre y Apellido</Form.Label>
-                                <Form.Control type="text" placeholder="Ingrese su Nombre y Apellido" name="nombre" onChange={datosComprador}/>
+                                <Form.Control type="text" placeholder="Nombre y Apellido" name="nombre" onChange={datosComprador}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>Telefono</Form.Label>
@@ -64,7 +63,7 @@ export default function Checkout () {
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control type="email" placeholder="Ingrese su Email" name="email" onChange={datosComprador} />
                             </Form.Group>
-                            <Button variant="primary" type="submit">Enviar</Button>
+                            <Button className="buttonCards botonCheckout" variant="secondary" type="submit">Enviar</Button>
                             {mensaje && <p>Complete todos sus datos por favor!</p>}
                         </Form>
                     </div>

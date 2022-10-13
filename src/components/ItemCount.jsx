@@ -16,7 +16,7 @@ export default function ItemCount({start, stock, contador, setContador, onAdd}) 
                 <Button className="botones" variant="info" onClick={()=>(contador===stock) ? setContador(stock) : setContador(contador + 1)}>+</Button>
             </div>
             <div>
-            <Button variant="success" onClick={onAdd} >Agregar</Button>
+            <Button className="buttonCards" variant="secondary" onClick={onAdd} >Agregar</Button>
             </div>
             
         

@@ -5,7 +5,7 @@ import CartWidget from "./CartWidget"
 
 export default function NavBar() {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className="fondoNav" collapseOnSelect expand="lg" bg="ligth" variant="ligth">
             <Container className="containerMargin">
                 <NavLink className="navbar-brand colorLink" to='/'>Inicio</NavLink>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

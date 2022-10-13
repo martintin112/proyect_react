@@ -13,18 +13,22 @@ export default function Cart () {
                 !cart.length
                 ? <div>
                     <h2>Carrito Vacio, ve a comprar!</h2>
-                    <Button onClick={()=>navegar('/')} variant="success"> Ir a Comprar</Button>
+                    <Button style={{marginBottom:'20px'}} className="buttonCards" onClick={()=>navegar('/')} variant="secondary"> Ir a Comprar</Button>
                 </div>
-                : <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-                    <h3>Carrito</h3>
+                : <>  <div>
+                        <h3 className="titulo marginTituloCart">Carrito</h3>
+                    </div>
+                <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+                    
                     {cart.map((compra) => <CartItem key = {compra.id} compra={compra}/>)}
                     <span>Total: ${cartTotal()}</span>
                     <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', padding:'10px'}}>
-                        <Button variant="secondary" onClick={clear}>Vaciar Carrito</Button>
+                        <Button style={{marginRight:'10px'}} className="buttonCards" variant="secondary" onClick={clear}>Vaciar Carrito</Button>
                         <Button variant="success" onClick={()=>navegar('/checkout')}>Terminar Compra</Button>
                     </div>
                     
                 </div>
+                </>
             }
             
         </div>
